@@ -102,7 +102,7 @@ class SubscriptionsManager extends events.EventDetector {
   }
 
   /// Publish message received
-  void publishMessageReceived(events.Event<MessageReceived> event) {
+  void publishMessageReceived(events.Event event) {
     final String topic = event.data.topic.rawTopic;
     if (messagesReceived.containsKey(topic)) {
       final MqttReceivedMessage<MqttMessage> msg =
